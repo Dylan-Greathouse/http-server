@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
-  "type": "commonjs",
+  "type": "module",
   "scripts": {
-    "test": "jest --verbose --runInBand--testLocationInResults",
+    "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest --verbose --runInBand --testLocationInResults",
     "test:watch": "npm run test -- --watch",
     "start": "node server.js",
     "start:watch": "nodemon server.js"
@@ -26,6 +26,10 @@
     "prettier": "^2.4.1"
   },
   "dependencies": {
-    "cross-env": "^7.0.3"
+    "cross-env": "^7.0.3",
+    "fs.promises": "^0.1.2",
+    "path": "^0.12.7",
+    "shortid": "^2.2.16",
+    "supertest": "^6.1.6"
   }
 }
