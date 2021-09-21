@@ -30,10 +30,10 @@ describe('http server app routes', () => {
 
   });
 
-  // it('should return 404 from GET /styles', async () => {
-  //   const res = await request(app)
-  //     .get('/styles');
+  it('should return 404 from GET /styles', async () => {
+    const res = await request(app)
+      .get('/styles');
       
-  //   expect(res.statusCode).toEqual(404);
-  // });
+    expect(res.statusCode).toEqual(404);
+  });
 });
