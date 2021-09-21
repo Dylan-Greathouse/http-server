@@ -4,9 +4,9 @@ import { readFile } from 'fs/promises';
 
 describe('http server app routes', () => {
   it('should return index.html from GET /', async () => {
-    const { res, index } = await Promise.all([
+    const [res, index] = await Promise.all([
       request(app).get('/'),
-      readFile('../public/index.html')
+      readFile('./public/index.html', 'utf-8')
     ]);
     // console.log(res, index);
     expect(res.text).toEqual(index);
