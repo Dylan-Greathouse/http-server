@@ -13,11 +13,13 @@ describe('http server app routes', () => {
     // expect(res.statusCode).toEqual(200);
   });
   
-  it.skip('should return main.css file contents on GET /public/css/main.css', async () => {
-    const res = await request(app).get('/public/css/main.css');
-  
-    expect(res.statusCode).toEqual(200);
-    expect(res.body).toEqual();
+  it('should return main.css file contents on GET /public/css/main.css', async () => {
+    const [res, css] = await Promise.all([
+      request(app).get('/public/css/main.css'),
+      readFile('./public/css/main.css', 'utf-8')
+    ]);
+    expect(res.text).toEqual(css);
+    // expect(res.body).toEqual();
   });
   
   it.skip('should return 404 from GET /bad-file', async () => {
