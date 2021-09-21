@@ -10,7 +10,7 @@ describe('simple data structure test', () => {
     });
   });
 
-  it('save object has id', () => {
+  it.skip('save object has id', () => {
     const simpleDb = new SimpleDataBase(rootDir);
 
     const data = {
@@ -25,7 +25,7 @@ describe('simple data structure test', () => {
       });
   });
 
-  it('save and get an object', () => {
+  it.skip('save and get an object', () => {
     const simpleDb = new SimpleDataBase(rootDir);
 
     const data = {
@@ -42,7 +42,7 @@ describe('simple data structure test', () => {
       });   
   });
 
-  it('it should return null if it can not get object', () => {
+  it.skip('it should return null if it can not get object', () => {
     const simpleDb = new SimpleDataBase(rootDir);
     const data = {
       a: 666
