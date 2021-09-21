@@ -13,22 +13,21 @@ describe('http server app routes', () => {
     // expect(res.statusCode).toEqual(200);
   });
   
-  it.only('should return main.css file contents on GET /public/css/main.css', async () => {
+  it('should return main.css file contents on GET /public/css/main.css', async () => {
     
     const [res, css] = await Promise.all([
       request(app).get('/css/main.css'),
       readFile('./public/css/main.css', 'utf-8')
     ]);
     expect(res.text).toEqual(css);
-    // expect(res.body).toEqual();
   });
   
-  it.skip('should return 404 from GET /bad-file', async () => {
+  it('should return 404 from GET /bad-file', async () => {
     const res = await request(app)
-      .get('');
+      .get('/bad-file');
       
     expect(res.statusCode).toEqual(404);
-    expect(res.body).toEqual();
+
   });
 
   it.skip('should return 404 from GET /styles', async () => {
